@@ -14,6 +14,15 @@ nmask = ~pmask;
 npos=sum(pmask);
 nneg=sum(nmask);
 
+fprintf('Feature statistics:\n');
+fprintf('%d positive examples.\n%d negative examples.\n', npos, nneg);
+if npos > nneg
+  fprintf('positive majority at %0.2f : 1 ratio.\n', npos/nneg);
+else
+  fprintf('negative majority at %0.2f : 1 ratio.\n', nneg/npos);
+end
+fprintf('\n');
+
 
 % raw scores and models
 % M x 1 cell string
